@@ -41,7 +41,7 @@ And("User clicks on Login button", ()=>{
 
     cy
     .get('#login-form')
-    .find("[class='btn btn-default']")
+    .find(guru99.getLoginButton())
     .last()
     .click({force:true})
 
@@ -52,14 +52,8 @@ And("User clicks on Login button", ()=>{
 
 Then("Validate login failure message", ()=>{
 
-    // cy
-    // .get('#login-form')
-    // .scrollIntoView()
-    // .contains('Enter your Email address and password correct', { includeShadowDom: true })
-    // .should('be.visible')
-
     cy
-    .contains('#login-form','Enter your Email address and password correct', { includeShadowDom: true })
+    .contains('#login-form','Enter your Email address and password correct')
     .scrollIntoView()
     .should('be.visible')
 
@@ -70,16 +64,11 @@ Then("User enters a valid username and password", ()=>{
     cy
     .get('#email')
     .type('ashok.dekammagari@gmail.com')
-
-    cy
-    .wait(500)
+    .type(guru99.getUserName())
 
     cy
     .get('#password')
-    .type('Test12345!@')
-
-    cy
-    .wait(500)
+    .type(guru99.getPassword())
 
 })
 
@@ -98,17 +87,8 @@ Then("Validate login success message", ()=>{
 
 And("User navigates to Request Quotation page", ()=>{
 
-    // cy
-    // .contains('Request Quotation')
-    // .click()
-
-    // cy
-    // .get('.ui-tabs-anchor', { includeShadowDom: true })
-    // .contains('Request Quotation')
-    // .click({force:true})
-
     cy
-    .contains('#ui-id-2','Request Quotation', { includeShadowDom: true })
+    .contains('#ui-id-2','Request Quotation')
     .click({force:true})
 
     cy
@@ -126,45 +106,59 @@ And("User navigates to Request Quotation page", ()=>{
     .scrollIntoView()
     .click({force:true})
 
-    // cy
-    // .get('input.btn.btn-success')
-    // .scrollIntoView()
-    // .click({force:true})
-
 })
 
 And("User navigates to Retrieve Quotation page", ()=>{
 
-    // cy
-    // .contains('Retrieve Quotation')
-    // .click()
+    cy
+    .contains('#ui-id-3','Retrieve Quotation')
+    .click({force:true})
 
     cy
-    .contains('#ui-id-3','Retrieve Quotation', { includeShadowDom: true })
-    .click({force:true})
+    .get("[placeholder='identification number']")
+    .click()
+
+    cy
+    .get("[placeholder='identification number']")
+    .type('23976')
+
+    cy
+    .get('#getquote')
+    .click()
+
+    cy
+    .contains('Retrieve Quotation')
 
 })
 
 And("User navigates to Profile page", ()=>{
 
-    // cy
-    // .contains('Profile')
-    // .click()
+    cy
+    .contains('#ui-id-4','Profile')
+    .click({force:true})
 
     cy
-    .contains('#ui-id-4','Profile', { includeShadowDom: true })
-    .click({force:true})
+    .contains('Title')
+
+    cy
+    .contains('Firstname')
 
 })
 
 And("User navigates to Edit Profile page", ()=>{
 
-    // cy
-    // .contains('Edit Profile')
-    // .click()
+    cy
+    .contains('#ui-id-5','Edit Profile')
+    .click({force:true})
 
     cy
-    .contains('#ui-id-5','Edit Profile', { includeShadowDom: true })
+    .get('#user_firstname')
+    .last()
+    .type('Ashok')
+
+    cy
+    .get('.btn btn-success')
+    .last()
     .click({force:true})
 
 })

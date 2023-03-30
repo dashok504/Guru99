@@ -1,7 +1,7 @@
 const URL = "https://demo.guru99.com/insurance/v1/index.php";
 const USER_NAME = "['ashok.dekammagari@gmail.com']";
 const PASSWORD = "['Test12345!@']";
-const LOGIN_BUTTON = "[type='submit']";
+const LOGIN_BUTTON = "[class='btn btn-default']";
 
 class Guru99{
 
