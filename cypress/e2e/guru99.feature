@@ -1,3 +1,23 @@
+/*
+Test Plan for Insurance Website Page:
+
+Scope:
+The scope of this test plan is to test the Insurance Website Page available at 
+https://demo.guru99.com/insurence/v1/index.php. The objective is to ensure that the page is 
+functioning as expected, and all the features and functionalities are working correctly.
+
+Assumptions:
+The website is accessible and available for testing.
+The website is compatible with the latest versions of popular web browsers.
+The test environment is similar to the production environment.
+The website has been developed and deployed without any errors.
+
+Tools:
+Cypress to automate the test cases.
+Cucumber framework for test management.
+JavaScript for programming language.
+
+*/
 Feature: Registered Insurance Customer Login Validation
 
 Background: Login to Guru99 Website

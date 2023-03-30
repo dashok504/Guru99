@@ -41,7 +41,7 @@ And("User clicks on Login button", ()=>{
 
     cy
     .get('#login-form')
-    .find(guru99.getLoginButton())
+    .find("[class='btn btn-default']")
     .last()
     .click({force:true})
 
